@@ -23,7 +23,7 @@
         </service>
 
         <service id="Odiseo\SyliusRbacPlugin\Form\Extension\AdminUserTypeExtension">
-            <tag name="form.type_extension" extended-type="Sylius\Bundle\CoreBundle\Form\Type\User\AdminUserType" />
+            <tag name="form.type_extension" extended-type="Sylius\Bundle\UserBundle\Form\Type\UserType" />
         </service>
 
         <service id="Odiseo\SyliusRbacPlugin\Extractor\PermissionDataExtractor" />
@@ -99,20 +99,6 @@
             <argument type="service" id="sylius_rbac.custom_factory.administration_role" />
             <argument type="service" id="doctrine.orm.entity_manager" />
             <tag name="sylius_fixtures.fixture"/>
-        </service>
-
-        <service id="sylius.fixture.admin_user" class="Odiseo\SyliusRbacPlugin\Fixture\AdminUserFixture">
-            <argument type="service" id="sylius.manager.admin_user" />
-            <argument type="service" id="sylius.fixture.example_factory.admin_user" />
-            <tag name="sylius_fixtures.fixture" />
-        </service>
-
-        <service id="sylius.fixture.example_factory.admin_user" class="Odiseo\SyliusRbacPlugin\Factory\AdminUserExampleFactory">
-            <argument type="service" id="sylius.factory.admin_user" />
-            <argument type="service" id="sylius_rbac.repository.administration_role" />
-            <argument>%locale%</argument>
-            <argument type="service" id="file_locator" />
-            <argument type="service" id="sylius.image_uploader" />
         </service>
 
         <service id="Odiseo\SyliusRbacPlugin\Provider\SyliusSectionsProvider" public="true">

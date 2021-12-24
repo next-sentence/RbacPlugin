@@ -10,8 +10,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
-        "sylius/sylius": "~1.9.0 || ~1.10.0",
-        "symfony/messenger": "^4.4 || ^5.2"
+        "symfony/messenger": "^4.4 || ^5.2",
+        "sylius/user-bundle": "^1.8",
+        "sylius/resource-bundle": "^1.8",
+        "sylius/fixtures-bundle": "^1.7"
     },
     "require-dev": {
         "behat/behat": "^3.6.1",
@@ -36,6 +38,7 @@
         "phpunit/phpunit": "^9.5",
         "sensiolabs/security-checker": "^6.0",
         "sylius-labs/coding-standard": "^4.0",
+        "sylius/sylius": "~1.9.0 || ~1.10.0",
         "symfony/browser-kit": "^4.4 || ^5.2",
         "symfony/debug-bundle": "^4.4 || ^5.2",
         "symfony/dotenv": "^4.4 || ^5.2",
