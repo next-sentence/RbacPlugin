@@ -55,7 +55,7 @@ sylius_grid:
 #                        template: '@OdiseoSyliusRbacPlugin/AdministrationRole/Grid/Field/administrationRole.html.twig'
 
 odiseo_sylius_rbac:
-#    sylius_sections:
+    sylius_sections:
 #        catalog:
 #            - sylius_admin_inventory
 #            - sylius_admin_product
@@ -64,8 +64,8 @@ odiseo_sylius_rbac:
 #            - sylius_admin_product_option
 #            - sylius_admin_product_variant
 #            - sylius_admin_taxon
-#        configuration:
-#            - sylius_admin_admin_user
+        configuration:
+            - sylius_admin_admin_user
 #            - sylius_admin_channel
 #            - sylius_admin_country
 #            - sylius_admin_currency
@@ -77,8 +77,8 @@ odiseo_sylius_rbac:
 #            - sylius_admin_tax_category
 #            - sylius_admin_tax_rate
 #            - sylius_admin_zone
-#        customers:
-#            - sylius_admin_customer
+        customers:
+            - sylius_admin_customer
 #            - sylius_admin_customer_group
 #            - sylius_admin_shop_user
 #        marketing:

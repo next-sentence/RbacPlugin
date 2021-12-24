@@ -22,10 +22,6 @@
             <tag name="form.type" />
         </service>
 
-        <service id="Odiseo\SyliusRbacPlugin\Form\Extension\AdminUserTypeExtension">
-            <tag name="form.type_extension" extended-type="Sylius\Bundle\UserBundle\Form\Type\UserType" />
-        </service>
-
         <service id="Odiseo\SyliusRbacPlugin\Extractor\PermissionDataExtractor" />
 
         <service
