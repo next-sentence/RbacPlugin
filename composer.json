@@ -10,7 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
-        "symfony/messenger": "^4.4 || ^5.2",
+        "symfony/messenger": "^4.4 || ^5.2 || ^6.0",
         "sylius/user-bundle": "^1.8",
         "sylius/resource-bundle": "^1.8",
         "sylius/fixtures-bundle": "^1.7"
