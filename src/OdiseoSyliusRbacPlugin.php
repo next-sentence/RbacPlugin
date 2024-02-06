@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Odiseo\SyliusRbacPlugin;
 
-use Sylius\Bundle\CoreBundle\Application\SyliusPluginTrait;
+use Odiseo\SyliusRbacPlugin\Application\MonofonyPluginTrait;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 final class OdiseoSyliusRbacPlugin extends Bundle
 {
-    use SyliusPluginTrait;
+    use MonofonyPluginTrait;
 }

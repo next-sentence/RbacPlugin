@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Odiseo\SyliusRbacPlugin\Access\Menu;
 
 use Sylius\Bundle\UiBundle\Menu\Event\MenuBuilderEvent;
-use Sylius\Component\Core\Model\AdminUserInterface;
+use Sylius\Component\User\Model\UserInterface;
 use Odiseo\SyliusRbacPlugin\Access\Checker\AdministratorAccessCheckerInterface;
 use Odiseo\SyliusRbacPlugin\Access\Model\AccessRequest;
 use Odiseo\SyliusRbacPlugin\Access\Model\OperationType;
@@ -40,7 +40,7 @@ final class AdminMenuAccessListener
         Assert::notNull($token, 'There is no logged in user');
 
         $adminUser = $token->getUser();
-        Assert::isInstanceOf($adminUser, AdminUserInterface::class, 'Logged in user should be an administrator');
+        Assert::isInstanceOf($adminUser, UserInterface::class, 'Logged in user should be an administrator');
 
         $menu = $event->getMenu();
 
@@ -72,7 +72,7 @@ final class AdminMenuAccessListener
         }
     }
 
-    private function hasAdminNoAccessToSection(AdminUserInterface $adminUser, Section $section): bool
+    private function hasAdminNoAccessToSection(UserInterface $adminUser, Section $section): bool
     {
         return !$this->accessChecker->canAccessSection(
             $adminUser,

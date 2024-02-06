@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Odiseo\SyliusRbacPlugin\Access\Listener;
 
-use Sylius\Component\Core\Model\AdminUserInterface;
+use Sylius\Component\User\Model\UserInterface as SyliusUser;
 use Odiseo\SyliusRbacPlugin\Access\Checker\AdministratorAccessCheckerInterface;
 use Odiseo\SyliusRbacPlugin\Access\Checker\RouteNameCheckerInterface;
 use Odiseo\SyliusRbacPlugin\Access\Creator\AccessRequestCreatorInterface;
@@ -92,12 +92,12 @@ final class AccessCheckListener
         return $accessRequest;
     }
 
-    private function getCurrentAdmin(): AdminUserInterface
+    private function getCurrentAdmin(): SyliusUser
     {
         $token = $this->tokenStorage->getToken();
         Assert::notNull($token);
 
-        /** @var AdminUserInterface|null $currentAdmin */
+        /** @var SyliusUser|null $currentAdmin */
         $currentAdmin = $token->getUser();
         Assert::isInstanceOf($currentAdmin, UserInterface::class);
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Odiseo\SyliusRbacPlugin\Access\Checker;
 
 use Odiseo\SyliusRbacPlugin\Entity\AdministrationRoleAwareInterface;
-use Sylius\Component\Core\Model\AdminUserInterface;
+use Sylius\Component\User\Model\UserInterface;
 use Odiseo\SyliusRbacPlugin\Access\Model\AccessRequest;
 use Odiseo\SyliusRbacPlugin\Access\Model\OperationType;
 use Odiseo\SyliusRbacPlugin\Access\Model\Section;
@@ -14,7 +14,7 @@ use Webmozart\Assert\Assert;
 
 final class AdministratorAccessChecker implements AdministratorAccessCheckerInterface
 {
-    public function canAccessSection(AdminUserInterface $admin, AccessRequest $accessRequest): bool
+    public function canAccessSection(UserInterface $admin, AccessRequest $accessRequest): bool
     {
         if ($admin instanceof AdministrationRoleAwareInterface) {
             $administrationRole = $admin->getAdministrationRole();
